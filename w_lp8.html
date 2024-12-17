@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      header {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+      header h1 {
+        margin: auto;
+        padding: 30px;
+        width: 60%;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 42px;
+        font-family: Calibri;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(32rem, 1fr));
+        gap: 2vmax;
+        height: 60vmax;
+        padding: 20px 40px;
+        justify-items: center;
+      }
+      .grid-item {
+        width: 32rem;
+        height: auto;
+        align-content: end;
+        line-height: 1;
+        overflow: hidden;
+        position: relative;
+        border-radius: 1.5rem;
+      }
+      .grid-item img {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        object-fit: cover;
+      }
+      .grid-item h2,
+      .grid-item p {
+        position: relative;
+        top: -5.25rem;
+        left: 1.25rem;
+        color: white;
+        text-shadow: 1px 1px 2px black;
+        line-height: 0.5;
+      }
+      .grid-item:nth-child(2) {
+        grid-area: 1 / 2 / 3;
+        height: auto;
+      }
+      .grid-item span.item-1 {
+        background-image: url(lampiran/images1.jpeg);
+      }
+      .body-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        height: auto;
+        margin: 50px 10vmax;
+        gap: 5vmin;
+      }
+      .body-container img {
+        width: 40vmax;
+        height: auto;
+      }
+      .body-container .text-body {
+        text-align: end;
+        width: 40vmax;
+        padding-bottom: 2rem;
+      }
+      button.shop-btn {
+        border: 2px solid rgb(200, 245, 65);
+        background-color: rgb(200, 245, 65);
+        color: rgb(3, 59, 1);
+        padding: 10px;
+        margin: auto 0;
+        border-radius: 10px;
+        align-content: center;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      button.shop-btn:hover {
+        border: 2px solid rgb(73, 116, 3);
+        background-color: white;
+        color: rgb(73, 116, 3);
+      }
+      .view-container {
+        height: auto;
+        margin: 20px 5vmax;
+        border-bottom: 2px solid rgb(3, 59, 1);
+      }
+      .view-container .text-view {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        gap: 5vmin;
+      }
+      .view-container .view-item {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        border-top: 2px solid rgb(3, 59, 1);
+        height: auto;
+        padding: 20px 0;
+        gap: 2rem;
+      }
+      .view-container .view-item .text-item {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-direction: row;
+        height: auto;
+        width: 50%;
+        padding: 0;
+        margin: auto 0;
+        gap: 2rem;
+      }
+      button.view-btn {
+        border: 2px solid rgb(73, 116, 3);
+        color: rgb(73, 116, 3);
+        width: 100px;
+        padding: 10px;
+        margin: auto 0;
+        border-radius: 10px;
+        align-content: center;
+        cursor: pointer;
+      }
+      button.view-btn:hover {
+        border: 2px solid rgb(200, 245, 65);
+        background-color: rgb(200, 245, 65);
+      }
+      .item-description h3,
+      .item-description p,
+      .item-number h3 {
+        text-align: justify;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+      }
+      .view-container .view-item .item-image {
+        overflow: hidden;
+        position: relative;
+        height: 80px;
+        width: 30%;
+        margin: auto 0;
+        padding: 0;
+      }
+      .view-container .view-item .item-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+      @media (max-width: 1200px) {
+        .grid-container {
+          grid-template-columns: repeat(2, minmax(28rem, 1fr));
+        }
+        .grid-item {
+          width: 28rem;
+        }
+      }
+      @media (max-width: 1024px) {
+        .grid-container {
+          grid-template-columns: repeat(2, minmax(25rem, 1fr));
+        }
+        .grid-item {
+          width: 25rem;
+        }
+      }
+      @media (max-width: 892px) {
+        .grid-container {
+          grid-template-columns: repeat(2, minmax(20rem, 1fr));
+        }
+        .grid-item {
+          width: 20rem;
+        }
+      }
+      @media (max-width: 768px) {
+        .grid-container {
+          grid-template-columns: repeat(2, minmax(15rem, 1fr));
+        }
+        .grid-item {
+          width: 15rem;
+        }
+        .body-container img {
+          width: 40vmin;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Inspiring interiors crafted with passion</h1>
+    </header>
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="lampiran/images2.jpeg" alt="" />
+        <h2>Soft Sofa</h2>
+        <p>Off-white color</p>
+      </div>
+      <div class="grid-item">
+        <img src="lampiran/images1.jpeg" alt="" />
+        <h2>Book Table</h2>
+        <p>Experience the ultimea</p>
+      </div>
+      <div class="grid-item">
+        <img src="lampiran/images.jpeg" alt="" />
+        <h2>Modern chair</h2>
+        <p>Made with wood</p>
+      </div>
+    </div>
+    <div class="body-container">
+      <img src="lampiran/download__2_-removebg-preview.png" alt="" />
+      <div class="text-body">
+        <h1>New experience is going to unlock</h1>
+        <p>
+          Indulge in comfort and style with our range of plush furniture and
+          cozy accents
+        </p>
+        <button class="shop-btn">Shop now</button>
+      </div>
+    </div>
+    <div class="view-container">
+      <div class="text-view">
+        <h1>Some of our well know projects!</h1>
+        <p>
+          Elevate your interiors with our curated selection of premium furniture
+          and accessories
+        </p>
+      </div>
+      <div class="view-item">
+        <div class="text-item">
+          <div class="item-number">
+            <h3>01</h3>
+          </div>
+          <div class="item-description">
+            <h3>Refined Elegance</h3>
+            <p>
+              Indulge in comfort and style with our range of plush furniture and
+              cozy accents
+            </p>
+          </div>
+        </div>
+        <button class="view-btn">View project</button>
+        <div class="item-image">
+          <img src="lampiran/download (1).jpeg" alt="" />
+        </div>
+      </div>
+      <div class="view-item">
+        <div class="text-item">
+          <div class="item-number">
+            <h3>02</h3>
+          </div>
+          <div class="item-description">
+            <h3>Artistic Elegance</h3>
+            <p>
+              Indulge in comfort and style with our range of plush furniture and
+              cozy accents
+            </p>
+          </div>
+        </div>
+        <button class="view-btn">View project</button>
+        <div class="item-image">
+          <img src="lampiran/download (2).jpeg" alt="" />
+        </div>
+      </div>
+      <div class="view-item">
+        <div class="text-item">
+          <div class="item-number">
+            <h3>03</h3>
+          </div>
+          <div class="item-description">
+            <h3>Harmonious Spaces</h3>
+            <p>
+              Indulge in comfort and style with our range of plush furniture and
+              cozy accents
+            </p>
+          </div>
+        </div>
+        <button class="view-btn">View project</button>
+        <div class="item-image">
+          <img src="lampiran/images (3).jpeg" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
